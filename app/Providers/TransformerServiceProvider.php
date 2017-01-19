@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Transformers\PostTrasnformer;
 use App\Transformers\TweetTrasnformer;
 use Illuminate\Support\ServiceProvider;
 
@@ -25,5 +26,6 @@ class TransformerServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('TweetTransformer', TweetTransformer::class);
+        $this->app->singleton('PostTransformer', PostTransformer::class);
     }
 }

@@ -15,7 +15,9 @@ class EloquentStream implements Stream {
 
     public function saveNewTweets($tweets)
     {
+
         collect($tweets)->each(function($tweet) {
+
             $exists = $this->model->where('item_created_at', $tweet['item_created_at'])->get();
 
             if ($exists->count() < 1) {

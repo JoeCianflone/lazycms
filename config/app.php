@@ -178,6 +178,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\TransformerServiceProvider::class,
+        App\Providers\DropboxServiceProvider::class,
 
         Thujohn\Twitter\TwitterServiceProvider::class,
 

@@ -52,7 +52,6 @@ class GetTweetsAndSave extends Command
                             'tweet_mode' => 'extended',
             ])
         );
-
         $stream->saveNewTweets($tweets);
     }
 }
