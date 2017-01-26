@@ -38,18 +38,14 @@ class GetPostsAndSave extends Command
      *
      * @return mixed
      */
-    public function handle(PostsTransformer $transformer, Stream $stream)
+    public function handle(PostTransformer $transformer, Stream $stream)
     {
-        // Get all the articles out of Dropbox
         $allFiles = collect(Storage::disk('dropbox')->files(getenv('DROPBOX_POST_PATH')));
 
-        // Filter to only the things we want (only markdown)
-        $markdownFiles = $allFiles->filter(function($value, $key) {
+        $posts = $transformer->transform($allFiles->filter(function($value, $key) {
             return ends_with($value, getenv('DROPBOX_POST_EXTENSION'));
-        });
+        }));
 
-
-        // Transform data
-        // save data to DB
+        $stream->saveNewPosts($posts);
     }
 }
