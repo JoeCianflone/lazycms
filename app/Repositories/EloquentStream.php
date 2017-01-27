@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use Carbon\Carbon;
 use App\Models\Stream as StreamModel;
 
 class EloquentStream implements Stream {
@@ -52,7 +53,7 @@ class EloquentStream implements Stream {
     // the second one won't get inserted
     private function saveNewItem($item)
     {
-        $exists = $this->model->where('item_created_at', $item['item_created_at'])->get();
+        $exists = $this->model->where('item_created_at', '=', Carbon::parse($item['item_created_at'])->toDateTimeString())->get();
 
         if ($exists->count() < 1) {
             $this->model->insert($item);

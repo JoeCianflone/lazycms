@@ -67,8 +67,8 @@ class PostTransformer implements Transformer {
     {
         return [
             'author' => isset($post['yaml']['author']) ? $post['yaml']['author'] : getenv('POST_AUTHOR'),
-            'tags' => isset($post['yaml']['tags']) ? explode(',', $post['yaml']['tags']) : '',
-            'title' => isset($post['yaml']['headline']) ? $post['yaml']['headline'] : '',
+            'tags'   => isset($post['yaml']['tags']) ? explode(',', $post['yaml']['tags']) : '',
+            'title'  => isset($post['yaml']['headline']) ? $post['yaml']['headline'] : '',
         ];
     }
 
