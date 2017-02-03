@@ -20,7 +20,8 @@ class StreamController extends Controller
      */
     public function index()
     {
-        dd($this->stream->getAllStreamItems());
+        //dd($this->stream->getAllStreamItems());
+        return view('welcome');
     }
 
     /**

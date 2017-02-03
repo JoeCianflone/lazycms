@@ -1,0 +1,9 @@
+.header {
+    @include container();
+    border: 1px solid blue;
+    padding: rem(10px);
+
+    &__logo {
+
+    }
+}

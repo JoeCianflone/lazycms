@@ -1,0 +1,19 @@
+.navigation {
+    &__button {
+        display: inline-block;
+        padding: rem(20px) 0;
+        color: get-color(white);
+
+        &--bars {
+            display: inline-block;
+            float: left;
+            font-size: rem(24px);
+            padding: rem(23px) rem(10px) 0 0;
+        }
+        &--indicator {
+            display: inline-block;
+            font-size: rem(72px);
+            margin-right: rem(-4px);
+        }
+    }
+}

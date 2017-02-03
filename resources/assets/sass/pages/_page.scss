@@ -1,0 +1,27 @@
+.page {
+    align-content: stretch;
+    align-items: stretch;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100vh;
+    justify-content: space-between;
+    overflow: hidden;
+
+    &__main {
+        flex: 1 0 span(10);
+        order: 1;
+        overflow: scroll;
+    }
+    &__secondary {
+        background: get-color(ebony-clay);
+        flex: 0 0 rem(200px);
+        order: 0;
+        overflow-y: scroll;
+        margin-right: rem(10px);
+    }
+
+    &__container {
+        @include container();
+        max-width: span(10);
+    }
+}
