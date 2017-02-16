@@ -5,28 +5,49 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Lazy CMS</title>
-        <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,500" rel="stylesheet">
         <link rel="stylesheet" href="{{ mix('assets/css/app.css')}}">
     </head>
     <body>
-        <div class="page">
-            <main class="page__main">
-                <div class="page__container">
+        <div id="app">
+            <div class="page">
+                <main class="page__main">
                     <header class="header">
-                        <h1 class="header__logo"><a href="#"><img src="assets/images/logo.svg" alt=""></a></h1>
+                        <h1 class="header__logo text-is-right">
+                            <a href="{{url('/')}}" title="Joe Cianflone"><img src="assets/images/logo.svg" alt="Joe.Cianflone"></a>
+                        </h1>
                     </header>
-
-                </div>
-            </main>
-            <aside class="page__secondary text-is-right">
-                <a href="#" class="navigation__button">
-                    <span class="navigation__button--bars fa fa-bars"></span>
-                    <span class="navigation__button--indicator fa fa-caret-left"></span>
-                </a>
-            </aside>
+                    <div class="page__content">
+                        @yield('content')
+                    </div>
+                </main>
+                <sidebar>
+                    <ul class="navigation__list">
+                        <li class="navigation__item"><a href="{{url('/')}}">Stream</a>
+                            <ul class="navigation__secondary-list">
+                                <li class="navigation__secondary-list-item"><a href="{{url('stream/dev')}}">#dev</a></li>
+                                <li class="navigation__secondary-list-item"><a href="#">#tweets</a></li>
+                                <li class="navigation__secondary-list-item"><a href="#">#videos</a></li>
+                                <li class="navigation__secondary-list-item"><a href="#">#github</a></li>
+                                <li class="navigation__secondary-list-item"><a href="#">#livecoding</a></li>
+                            </ul>
+                        </li>
+                        <li class="navigation__item"><a href="{{url('/about')}}">About</a>
+                            <ul class="navigation__secondary-list">
+                                <li class="navigation__secondary-list-item"><a href="#"></a>#styleguide</li>
+                                <li class="navigation__secondary-list-item"><a href="#"></a>#disclaimer</li>
+                            </ul>
+                        </li>
+                        <li class="navigation__item"><a href="{{url('/projects')}}">Projects &amp; Contributions</a>
+                            <ul class="navigation__secondary-list">
+                                <li class="navigation__secondary-list-item"><a href="#"></a>#heisenberg</li>
+                                <li class="navigation__secondary-list-item"><a href="#"></a>#laravel-elixir-compass</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </sidebar>
+            </div>
         </div>
-        @yield('content')
-        <scrpts src="{{ mix('assets/js/app.js') }}"></scrpts>
     </body>
+        <script src="{{ mix('assets/js/app.js') }}"></script>
 </html>

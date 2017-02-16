@@ -8,9 +8,11 @@
     overflow: hidden;
 
     &__main {
-        flex: 1 0 span(10);
+        flex: 1 1 auto;
         order: 1;
         overflow: scroll;
+        padding-left: span(1);
+        padding-right: rem(20px);
     }
     &__secondary {
         background: get-color(ebony-clay);
@@ -18,10 +20,10 @@
         order: 0;
         overflow-y: scroll;
         margin-right: rem(10px);
-    }
 
-    &__container {
-        @include container();
-        max-width: span(10);
+        &.js-is-closed {
+            flex: 0 0 rem(55px);
+            overflow: visible;
+        }
     }
 }

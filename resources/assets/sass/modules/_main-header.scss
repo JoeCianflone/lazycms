@@ -1,9 +1,11 @@
 .header {
     @include container();
-    border: 1px solid blue;
     padding: rem(10px);
 
     &__logo {
+        @include span(last 12);
+        text-align: right;
 
+        img { float: right; }
     }
 }

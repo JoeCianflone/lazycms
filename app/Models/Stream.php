@@ -15,7 +15,9 @@ class Stream extends Model
     protected $guarded = [];
 
     protected $casts = [
-        'is_pinned' => 'boolean'
+        'id' => 'uuid',
+        'is_pinned' => 'boolean',
+        'content' => 'json',
+        'meta_content' => 'json',
     ];
-
 }

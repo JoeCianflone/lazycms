@@ -36,12 +36,12 @@ body {
 }
 
 img {
-    display: inline-block;
+    display: block;
     height: auto;
     max-width: 100%;
 
     &.is-fixed {
-        max-width: auto;
+        width: auto;
     }
 }
 
