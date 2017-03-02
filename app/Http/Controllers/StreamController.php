@@ -21,7 +21,7 @@ class StreamController extends Controller
      */
     public function index()
     {
-        $stream = collect($this->stream->getAllStreamItems());
+        $stream = $this->stream->getAllStreamItems();
 
         return view('stream')->with(compact('stream'));
     }

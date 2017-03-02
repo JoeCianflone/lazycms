@@ -1,11 +1,11 @@
 @inject('Twitter', 'Twitter')
 
-<div class="tweet" data-id="{{$item['id']}}">
+<div class="tweet" data-id="{{$item->id}}">
     <div class="tweet-image"></div>
     <div class="tweet-content">
         <ul class="meta-info-list">
             <li class="meta-info-list__item--type tweet__type">
-                <img class="tweet__avatar" src="{{ $item['content']['user']['avatar'] }}" alt="{{ $item['content']['user']['realName'] }}">
+                <img class="tweet__avatar" src="{{ $item->content['user']['avatar'] }}" alt="{{ $item->content['user']['realName'] }}">
                 @if($item['sub_type'] === 'retweet')
                     <span class="tweet__icon fa fa-retweet"></span>
                 @else
@@ -16,8 +16,8 @@
                 @if($item['sub_type'] === 'retweet')
                     Retweeted
                 @endif
-                <a href="{{ Twitter::linkUser($item['content']['user']['screenName']) }}" target="_blank">
-                    &#64;{{ $item['content']['user']['screenName'] }}
+                <a href="{{ Twitter::linkUser($item->content['user']['screenName']) }}" target="_blank">
+                    &#64;{{ $item->content['user']['screenName'] }}
                 </a>
             </li>
             <li class="meta-info-list__item">
@@ -26,7 +26,7 @@
         </ul>
 
         <blockquote class="tweet-content__text">
-            {!! Twitter::linkify($item['content']['text']) !!}
+            {!! Twitter::linkify($item->content['text']) !!}
         </blockquote>
     </div>
 </div>

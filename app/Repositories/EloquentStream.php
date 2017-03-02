@@ -16,7 +16,7 @@ class EloquentStream implements Stream {
 
     public function getAllStreamItems()
     {
-        return $this->model->orderBy('item_created_at', 'desc')->paginate(20)->toArray();
+        return $this->model->orderBy('item_created_at', 'desc')->paginate(20);
     }
 
     public function getStreamByType($type)
@@ -48,9 +48,6 @@ class EloquentStream implements Stream {
         });
     }
 
-    // TODO: there could be a case where you have
-    // two posts with the same date: Jan 25, 2017
-    // the second one won't get inserted
     private function saveNewItem($item)
     {
         $exists = $this->model->where('item_created_at', '=', Carbon::parse($item['item_created_at'])->toDateTimeString())->get();

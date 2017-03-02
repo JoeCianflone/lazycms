@@ -1,7 +1,9 @@
 @extends('layouts.master')
 
 @section('content')
-    @foreach($stream['data'] as $item)
-        @include('layouts.components.'.$item['type'], $item)
+    @foreach($stream->items() as $item)
+        @include('layouts.components.'.$item->type, $item)
     @endforeach
+
+    {{ $stream->links() }}
 @endsection
