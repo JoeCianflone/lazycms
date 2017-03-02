@@ -3,8 +3,20 @@
 
     &__avatar {
         border-radius: 50%;
-        margin: 0 auto;
-        width: 60%;
+        position: absolute;
+        height: rem(35px);
+        width: rem(35px);
+        opacity: 0.5;
+    }
+    &__type {
+        position: relative;
+        height: rem(35px);
+        width: rem(35px);
+    }
+    &__icon {
+        position: absolute;
+        bottom: -10px;
+        right: -10px;
     }
     &-content {
         &__text {

@@ -12,15 +12,29 @@
 </template>
 
 <script>
+
     export default {
         data() {
             return {
                 isClosed: false
             }
         },
+        beforeMount() {
+            window.addEventListener('resize', this.handleResize);
+
+            if (document.body.offsetWidth <= 640) {
+                this.toggleHide();
+            }
+        },
         methods: {
             toggleHide() {
                 return this.isClosed = (this.isClosed) ? false : true;
+            },
+
+            handleResize(event) {
+                if (document.body.clientWidth <= 640) {
+                    return this.isClosed = true;
+                }
             }
         }
     }

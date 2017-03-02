@@ -22,15 +22,15 @@ class PostTransformer implements Transformer {
             $post = $this->getPostItems($postFilePath);
 
             return [
-                'id' => Uuid::uuid1()->toString(),
-                'type' => 'post',
-                'slug' => $this->getSlug($post),
-                'meta_content' => json_encode($this->getMetaContent($post)),
-                'content' => json_encode($this->getContent($post)),
-                'is_pinned' => $this->getPinStatus($post),
+                'id'              => Uuid::uuid1()->toString(),
+                'type'            => 'post',
+                'slug'            => $this->getSlug($post),
+                'meta_content'    => json_encode($this->getMetaContent($post)),
+                'content'         => json_encode($this->getContent($post)),
+                'is_pinned'       => $this->getPinStatus($post),
                 'item_created_at' => Carbon::parse($post['yaml']['pubdate'])->timezone(env('APP_TIMEZONE')),
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
+                'created_at'      => Carbon::now(),
+                'updated_at'      => Carbon::now(),
             ];
         });
     }

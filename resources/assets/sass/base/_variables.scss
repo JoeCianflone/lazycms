@@ -12,40 +12,38 @@ $stack-settings: (
 // These weight names correspond to the
 // weights in fonts.google.com
 $font-weights: (
-    // thin:         100,
-    // extra-light:  200,
     light:        300,
-    // normal:       400,
     medium:       500,
-    // semi-bold:    600,
-    // bold:         700,
-    // extra-bold:   800,
-    // ultra-bold:   900,
 );
 
-// Use this breakpoints for your media queries
-// These are also used in the _grid.scss
-// so change them with caution
 $breakpoints: (
-    'sm': "min-width: 576px",
-    'ms': "min-width: 640px",
-    'md': "min-width: 768px",
-    'ml': "min-width: 800px",
-    'lg': "min-width: 992px",
-    'xl': "min-width: 1200px",
+    'min-fl': "min-width: 320px",
+    'min-sm': "min-width: 576px",
+    'min-ms': "min-width: 640px",
+    'min-md': "min-width: 768px",
+    'min-ml': "min-width: 800px",
+    'min-lg': "min-width: 992px",
+    'min-xl': "min-width: 1200px",
+    'max-fl': "max-width: 320px",
+    'max-sm': "max-width: 576px",
+    'max-ms': "max-width: 640px",
+    'max-md': "max-width: 768px",
+    'max-ml': "max-width: 800px",
+    'max-lg': "max-width: 992px",
+    'max-xl': "max-width: 1200px"
 );
 
 // Need names for colors? Go to http://joecianflone.github.io/colormapper/
 // put a hex code in there and it will give your color a name
 $colors: (
-    black:     #000,
-    tawny: #d35400,
-    ebony-clay: #22313f,
-    teal-blue: #3a728c,
-    bali-hai: #83a0ae,
-    jelly-bean: #2574a9,
-    tundora: #444444,
+    black: #000000,
     white: #ffffff,
+    tawny: #d35400,
+    tundora: #444444,
+    bali-hai: #83a0ae,
+    teal-blue: #3a728c,
+    ebony-clay: #22313f,
+    jelly-bean: #2574a9,
 );
 
 

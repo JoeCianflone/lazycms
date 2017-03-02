@@ -46,6 +46,10 @@
         font-weight: get-font-weight(medium);
         padding: rem(40px) rem(10px) rem(15px) rem(10px);
 
+        @media (get-breakpoint(max-ms)) {
+            font-size: rem(32px);
+        }
+
         &.js-is-closed {
             display: none;
         }
@@ -55,6 +59,11 @@
         font-size: rem(18px);
         font-weight: get-font-weight(light);
         padding: 0 0 rem(15px) 0;
+
+        @media (get-breakpoint(max-ms)) {
+            font-size: rem(24px);
+            padding: rem(5px) 0 rem(30px) 0;
+        }
     }
 
     &__secondary-list-item {

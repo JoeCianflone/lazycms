@@ -40,18 +40,13 @@ class GetTweetsAndSave extends Command
      */
     public function handle(TweetTransformer $transformer, Stream $stream)
     {
-        // get raw tweets from twitter
-        // transform data into something meaningful
-
-        // save transformed data to DB
-
-        $tweets = $transformer->transform(
-            Twitter::getUserTimeline([
+        $tweets = Twitter::getUserTimeline([
                             'count' => $this->option('count'),
                             'format' => 'array',
                             'tweet_mode' => 'extended',
-            ])
-        );
+        ]);
+
+        $tweets = $transformer->transform(collect($tweets));
         $stream->saveNewTweets($tweets);
     }
 }
