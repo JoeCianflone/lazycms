@@ -1,24 +1,36 @@
 .tweet {
+    @include container();
+
     padding: rem(25px) 0 rem(40px) 0;
 
     &__avatar {
         border-radius: 50%;
         position: absolute;
-        height: rem(35px);
-        width: rem(35px);
+        height: rem(25px);
+        width: rem(25px);
         opacity: 0.5;
     }
     &__type {
         position: relative;
-        height: rem(35px);
-        width: rem(35px);
+        height: rem(25px);
+        width: rem(25px);
     }
     &__icon {
         position: absolute;
         bottom: -10px;
         right: -10px;
     }
+    &-image {
+        @include span(2);
+    }
+
     &-content {
+        @include span(10);
+
+        &--with-media {
+            @include span(8);
+        }
+
         &__text {
             font-size: rem(36px);
             font-weight: get-font-weight('light');
@@ -30,4 +42,5 @@
             }
         }
     }
+
 }

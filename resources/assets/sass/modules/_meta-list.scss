@@ -12,10 +12,10 @@
         font-size: rem(14px);
         font-weight: get-font-weight(medium);
         display: inline-block;
-        padding: rem(5px);
+        padding: rem(5px) rem(5px) rem(5px) rem(15px);
 
         &--type {
-            font-size: rem(24px);
+            font-size: rem(18px);
             color: get-color(teal-blue);
         }
     }

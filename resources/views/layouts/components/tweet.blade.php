@@ -1,8 +1,20 @@
 @inject('Twitter', 'Twitter')
 
 <div class="tweet" data-id="{{$item->id}}">
-    <div class="tweet-image"></div>
-    <div class="tweet-content">
+    @if(! is_null($item->content['media']))
+        <div class="tweet-image">
+                <img src="{{ $item->content['media'][0]['media_url'] }}"
+                     width="{{ $item->content['media'][0]['sizes']['thumb']['w'] }}"
+                     height="{{ $item->content['media'][0]['sizes']['thumb']['h'] }}"
+                     alt="">
+        </div>
+    @endif
+
+    @if(is_null($item->content['media']))
+    <div class="tweet-content ">
+    @else
+    <div class="tweet-content tweet-content--with-media">
+    @endif
         <ul class="meta-info-list">
             <li class="meta-info-list__item--type tweet__type">
                 <img class="tweet__avatar" src="{{ $item->content['user']['avatar'] }}" alt="{{ $item->content['user']['realName'] }}">

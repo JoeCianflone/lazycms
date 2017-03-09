@@ -14,7 +14,7 @@
                 <main class="page__main">
                     <header class="header">
                         <h1 class="header__logo text-is-right">
-                            <a href="{{url('/')}}" title="Joe Cianflone"><img src="assets/images/logo.svg" alt="Joe.Cianflone"></a>
+                            <a href="{{url('/')}}" title="Joe Cianflone"><img src="{{ url('assets/images/logo.svg')}}" alt="Joe.Cianflone"></a>
                         </h1>
                     </header>
                     <div class="page__content">
@@ -25,8 +25,8 @@
                     <ul class="navigation__list">
                         <li class="navigation__item"><a href="{{url('/')}}">Stream</a>
                             <ul class="navigation__secondary-list">
-                                <li class="navigation__secondary-list-item"><a href="{{url('stream/dev')}}">#dev</a></li>
-                                <li class="navigation__secondary-list-item"><a href="#">#tweets</a></li>
+                                <li class="navigation__secondary-list-item"><a href="{{url('stream/post')}}">#posts</a></li>
+                                <li class="navigation__secondary-list-item"><a href="{{url('stream/tweet')}}">#tweets</a></li>
                                 <li class="navigation__secondary-list-item"><a href="#">#videos</a></li>
                                 <li class="navigation__secondary-list-item"><a href="#">#github</a></li>
                                 <li class="navigation__secondary-list-item"><a href="#">#livecoding</a></li>

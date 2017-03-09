@@ -69,4 +69,10 @@
     &__secondary-list-item {
         padding: rem(3px) 0 rem(5px) 0;
     }
+
+    &__breadcrumb {
+        color: get-color(tawny);
+        font-size: rem(18px);
+        margin: 0 0 rem(35px) 0;
+    }
 }
