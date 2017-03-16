@@ -36,7 +36,7 @@ class StreamController extends Controller
     public function show($type)
     {
         $stream = $this->stream->getStreamByType($type);
-        // dd ($stream->items());
+
         return view('filtered-stream')->with(compact('stream', 'type'));
     }
 
