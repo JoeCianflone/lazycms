@@ -31,6 +31,8 @@ class PageController extends Controller
          * if it does, show it, if not throw a
          * 404
          */
+
+        dd ($deepUri);
     }
 
     /**

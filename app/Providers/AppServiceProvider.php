@@ -24,5 +24,6 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('App\Repositories\Stream', 'App\Repositories\EloquentStream');
+        $this->app->bind('App\Repositories\Page', 'App\Repositories\EloquentPage');
     }
 }
