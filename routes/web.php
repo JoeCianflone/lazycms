@@ -9,5 +9,3 @@ Route::get('{slug?}/{deepUri?}', function($slug = null, $deepUri = null) {
 
     return \App::call('App\Http\Controllers\PageController@index', compact('slug', 'deepUri'));
 })->where('deepUri', '(.)*');
-
-

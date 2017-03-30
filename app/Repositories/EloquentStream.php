@@ -26,7 +26,7 @@ class EloquentStream implements Stream {
 
     public function getPinnedItem()
     {
-        return $this->model->where('is_pinned', true)->first();
+        return $this->model->where('is_pinned', true)->orderBy('item_created_at', 'desc')->first();
     }
 
     public function getPostBySlug($slug)

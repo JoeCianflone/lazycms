@@ -22,9 +22,10 @@ class StreamController extends Controller
      */
     public function index()
     {
+        $pinned = $this->stream->getPinnedItem();
         $stream = $this->stream->getAllStreamItems();
 
-        return view('stream')->with(compact('stream'));
+        return view('stream')->with(compact('stream', 'pinned'));
     }
 
     /**

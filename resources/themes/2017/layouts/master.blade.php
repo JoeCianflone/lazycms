@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Lazy CMS</title>
+        @yield('meta')
+        <title>@yield('page_title', 'The Lazy CMS')</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,500" rel="stylesheet">
         <link rel="stylesheet" href="{{ mix('assets/css/app.css')}}">
     </head>

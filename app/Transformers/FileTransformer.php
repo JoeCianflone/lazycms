@@ -7,7 +7,7 @@ use Carbon\Carbon;
 use Ramsey\Uuid\Uuid;
 use Mni\FrontYAML\Parser as YAMLParser;
 
-class PageTransformer implements Transformer {
+class FileTransformer implements Transformer {
 
     private $parser;
 
@@ -25,22 +25,17 @@ class PageTransformer implements Transformer {
                 'title'           => $this->getTitle($page),
                 'slug'            => $this->getSlug($page),
                 'use_layout'      => $this->getLayout($page),
-                'meta_content'    => json_encode(['meta' => $page['yaml']['meta']]),
-                'content'         => json_encode(['body' => $page['content']]),
+                'meta_content'    => json_encode($this->getMetaContent($post)),
+                'content'         => json_encode($this->getContent($post)),
                 'created_at'      => Carbon::now(),
                 'updated_at'      => Carbon::now(),
             ];
         });
     }
 
-    private function getAttribute($post, $itemName, $default)
-    {
-        return isset($post['yaml'][$itemName]) ? $post['yaml'][$itemName] : $post[$default];
-    }
-
     private function getTitle($post)
     {
-        return $this->getAttribute($post, 'title', 'filename');
+
     }
 
 
@@ -56,9 +51,14 @@ class PageTransformer implements Transformer {
         ];
     }
 
+    private function getPinStatus($post)
+    {
+        return isset($post['yaml']['pin']) ? $post['yaml']['pin'] : false;
+    }
+
     private function getSlug($post)
     {
-        return $this->getAttribute($post, 'slug', 'filename');
+        return isset($post['yaml']['slug']) ? $post['yaml']['slug'] : $post['filename'];
     }
 
     private function cleanFileName($item)
@@ -67,9 +67,22 @@ class PageTransformer implements Transformer {
         return str_replace(getenv('DROPBOX_PAGE_EXTENSION'), '', $item);
     }
 
-    private function getLayout($post)
+    private function getMetaContent($post)
     {
-        return $this->getAttribute($post, 'use_layout', getenv('DEFAULT_PAGE_LAYOUT'));
+        return [
+            'author' => isset($post['yaml']['author']) ? $post['yaml']['author'] : getenv('POST_AUTHOR'),
+            'tags'   => isset($post['yaml']['tags']) ? explode(',', $post['yaml']['tags']) : '',
+            'title'  => isset($post['yaml']['headline']) ? $post['yaml']['headline'] : '',
+        ];
     }
 
+    private function getContent($post)
+    {
+        return [
+            'headline' => isset(var)t($post['yaml']['headline']) ? $post['yaml']['headline'] : '',
+            'subhead' => isset($post['yaml']['subhead']) ? $post['yaml']['subhead'] : '',
+            'summary' => isset($post['yaml']['summary']) ? $post['yaml']['summary'] : '',
+            'body' => $post['content']
+        ];
+    }
 }

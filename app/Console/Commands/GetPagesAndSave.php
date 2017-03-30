@@ -46,6 +46,6 @@ class GetPagesAndSave extends Command
             return ends_with($value, getenv('DROPBOX_PAGE_EXTENSION'));
         }));
 
-        // $stream->saveNewPosts($posts);
+        $page->saveNewAndUpdatePages($pages);
     }
 }

@@ -16,6 +16,7 @@ class Kernel extends ConsoleKernel
         Commands\GetTweetsAndSave::class,
         Commands\GetPostsAndSave::class,
         Commands\GetPagesAndSave::class,
+        Commands\GetAssets::class,
     ];
 
     /**

@@ -14,7 +14,21 @@ class EloquentPage implements Page {
         $this->model = $model;
     }
 
-    public function saveNewPages($things) {
-        dd($things);
+    public function saveNewAndUpdatePages($pages)
+    {
+        collect($pages)->each(function($page) {
+            $existingPage = $this->model->where('slug', $page['slug']);
+
+            if ($existingPage->count() > 0) {
+                return $existingPage->update($page);
+            }
+
+            return $this->model->insert($page);
+        });
+    }
+
+    public function findBySlug($slug)
+    {
+        return $this->model->where('slug', $slug)->firstOrFail();
     }
 }
