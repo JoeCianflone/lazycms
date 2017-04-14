@@ -7,6 +7,8 @@
     justify-content: space-between;
     overflow: hidden;
 
+    &__content { }
+
     &__main {
         flex: 1 1 auto;
         order: 1;
@@ -21,8 +23,9 @@
         overflow-x: hidden;
         overflow-y: scroll;
         margin-right: rem(10px);
+        text-align: right;
 
-        @media (get-breakpoint(max-ms)) {
+        @media (get-breakpoint(max-md)) {
             flex: 0 0 100vw;
         }
 

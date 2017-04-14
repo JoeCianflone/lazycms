@@ -41,4 +41,10 @@ class StreamController extends Controller
         return view('filtered-stream')->with(compact('stream', 'type'));
     }
 
+    public function post($slug)
+    {
+        $post = $this->stream->getPostBySlug($slug);
+
+        return view('post')->with(compact('post'));
+    }
 }

@@ -4,29 +4,31 @@
         display: inline-block;
         padding: rem(20px) 0;
         position: relative;
+        width: 100%;
 
         &-bars {
             display: inline-block;
-            float: left;
+            float: right;
             font-size: rem(24px);
+            margin-right: rem(15px);
             padding: rem(23px) rem(10px) 0 0;
 
             &.js-is-closed {
-                padding: rem(23px) rem(19px) 0 0;
+                padding: rem(23px) rem(5px) 0 0;
             }
         }
 
         &-indicator {
             display: inline-block;
             font-size: rem(72px);
-            margin-right: rem(-4px);
+            margin-right: rem(-50px);
 
             &.js-is-closed {
                 display: none;
             }
 
             &--closed {
-                display: inline-block;
+                display: none;
                 font-size: rem(72px);
                 position: absolute;
                 right: rem(-15px);
@@ -46,8 +48,9 @@
         font-weight: get-font-weight(medium);
         padding: rem(40px) rem(10px) rem(15px) rem(10px);
 
-        @media (get-breakpoint(max-ms)) {
+        @media (get-breakpoint(max-md)) {
             font-size: rem(32px);
+            text-align: center;
         }
 
         &.js-is-closed {
@@ -60,7 +63,7 @@
         font-weight: get-font-weight(light);
         padding: 0 0 rem(15px) 0;
 
-        @media (get-breakpoint(max-ms)) {
+        @media (get-breakpoint(max-md)) {
             font-size: rem(24px);
             padding: rem(5px) 0 rem(30px) 0;
         }
@@ -68,6 +71,14 @@
 
     &__secondary-list-item {
         padding: rem(3px) 0 rem(5px) 0;
+
+        a {
+            display: block;
+
+            @media (get-breakpoint(max-md)) {
+                line-height: 1.5;
+            }
+        }
     }
 
     &__breadcrumb {

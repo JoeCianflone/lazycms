@@ -1,4 +1,4 @@
-require('./bootstrap');
+window.Vue = require('vue');
 
 Vue.component('sidebar', require('./components/Sidebar.vue'));
 

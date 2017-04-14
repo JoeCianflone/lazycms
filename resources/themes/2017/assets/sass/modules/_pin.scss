@@ -1,5 +1,6 @@
 .pin {
-    @include span(9);
+    @include container();
+    @include span(10);
 
     border-bottom: 1px solid rgba(get-color(ebony-clay), 0.1);
     margin: rem(10px) 0 rem(30px) 0;
@@ -9,4 +10,28 @@
         font-size: rem(22px);
         line-height: 1.5;
     }
+
+    &__headline {
+        margin-bottom: rem(10px);
+    }
+
+    &__link {
+        text-decoration: underline;
+        display: inline-block;
+        &:hover {
+            text-decoration: none;
+        }
+
+        &--readmore {
+            color: get-color(teal-blue);
+            font-size: rem(16px);
+            font-weight: get-font-weight(medium);
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+
 }

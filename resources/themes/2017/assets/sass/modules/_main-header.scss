@@ -1,6 +1,6 @@
 .header {
     @include container();
-    padding: rem(10px);
+    padding: rem(10px) rem(10px) rem(50px) rem(10px);
 
     &__logo {
         @include span(last 12);

@@ -1,5 +1,5 @@
 <template>
-    <aside class="page__secondary text-is-right" :class="{'js-is-closed':isClosed}">
+    <aside class="page__secondary" :class="{'js-is-closed':isClosed}">
         <a href="#" class="navigation__button" @click="toggleHide">
             <span class="navigation__button-bars fa fa-bars" :class="{'js-is-closed':isClosed}"></span>
             <span class="navigation__button-indicator fa fa-caret-left" :class="{'js-is-closed': !!isClosed}"></span>
@@ -22,7 +22,7 @@
         beforeMount() {
             window.addEventListener('resize', this.handleResize);
 
-            if (document.body.offsetWidth <= 640) {
+            if (document.body.offsetWidth <= 768) {
                 this.toggleHide();
             }
         },
@@ -32,7 +32,7 @@
             },
 
             handleResize(event) {
-                if (document.body.clientWidth <= 640) {
+                if (document.body.clientWidth <= 768) {
                     return this.isClosed = true;
                 }
             }
