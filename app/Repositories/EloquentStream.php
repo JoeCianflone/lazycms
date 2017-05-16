@@ -48,6 +48,13 @@ class EloquentStream implements Stream {
         });
     }
 
+    public function saveNewGithubEvents($ghEvents)
+    {
+        collect($ghEvents)->each(function($event) {
+            $this->saveNewItem($event);
+        });
+    }
+
     private function saveNewItem($item)
     {
         $exists = $this->model->where('item_created_at', '=', Carbon::parse($item['item_created_at'])->toDateTimeString())->get();

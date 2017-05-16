@@ -1,14 +1,14 @@
 @extends('layouts.master')
 
+@section('signature', 'stream stream-'.$type)
+
 @section('tagged-as')
     <h2 class="navigation__breadcrumb">Tagged as #{{$type}} </h2>
 @endsection
 
 @section('content')
-
-
     @foreach($stream->items() as $item)
-        @include('layouts.components.'.$item->type, $item)
+        @includeif('layouts.components.stream-types.'.$item->type, $item)
     @endforeach
 
     {{ $stream->links() }}

@@ -74,10 +74,17 @@ class PostTransformer implements Transformer {
 
     private function getContent($post)
     {
+        if (isset($post['yaml']['summary'])) {
+            $parsedSummary = $this->parser->parse($post['yaml']['summary']);
+            $summary = $parsedSummary->getContent();
+        } else {
+            $summary = '';
+        }
+
         return [
             'headline' => isset($post['yaml']['headline']) ? $post['yaml']['headline'] : '',
             'subhead' => isset($post['yaml']['subhead']) ? $post['yaml']['subhead'] : '',
-            'summary' => isset($post['yaml']['summary']) ? $post['yaml']['summary'] : '',
+            'summary' => $summary,
             'body' => $post['content']
         ];
     }

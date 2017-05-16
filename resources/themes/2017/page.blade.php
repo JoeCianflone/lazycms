@@ -1,6 +1,6 @@
 @extends('layouts.master')
-
 @section('page_title', $page->title)
+@section('signature', $page->slug)
 
 @section('meta')
     @foreach($page->meta_content['meta'] as $name => $value)

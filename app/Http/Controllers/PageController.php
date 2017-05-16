@@ -23,6 +23,6 @@ class PageController extends Controller
     {
         $page = $this->page->findBySlug($slug);
 
-        return view('pages.'.$page->use_layout)->with(compact('page'));
+        return view($page->use_layout)->with(compact('page'));
     }
 }

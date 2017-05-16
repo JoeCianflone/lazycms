@@ -16,11 +16,10 @@
 // Page level styles ...........................................................
 @import 'pages/page';
 
-// Modules ....................................................................
-@import 'modules/main-header';
-@import 'modules/navigation';
-@import 'modules/meta-list';
-@import 'modules/pagination';
-@import 'modules/tweets';
-@import 'modules/post';
-@import 'modules/pin';
+// Components ..................................................................
+@import 'components/stream-element';
+@import 'components/main-header';
+@import 'components/navigation';
+@import 'components/pagination';
+@import 'components/post';
+@import 'components/pin';

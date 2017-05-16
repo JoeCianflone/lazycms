@@ -1,5 +1,4 @@
 .pin {
-    @include container();
     @include span(10);
 
     border-bottom: 1px solid rgba(get-color(ebony-clay), 0.1);
@@ -32,6 +31,4 @@
             }
         }
     }
-
-
 }

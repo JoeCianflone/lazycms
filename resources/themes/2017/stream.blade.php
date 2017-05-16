@@ -1,10 +1,11 @@
 @extends('layouts.master')
+@section('signature', 'stream')
 
 @section('content')
     @include('layouts.components.pinned', $pinned)
 
     @foreach($stream->items() as $item)
-        @include('layouts.components.'.$item->type, $item)
+        @includeif('layouts.components.stream-types.'.$item->type, $item)
     @endforeach
 
     {{ $stream->links() }}

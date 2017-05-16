@@ -1,3 +1,10 @@
+body {
+    &.stream .stream,
+    &.about .about { color: get-color(jelly-bean); }
+    &.stream-post .stream-post { color: get-color(teal-blue); }
+    &.stream-tweet .stream-tweet { color: get-color(teal-blue); }
+}
+
 .navigation {
     &__button {
         color: get-color(white);

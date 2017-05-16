@@ -17,6 +17,7 @@ class Kernel extends ConsoleKernel
         Commands\GetPostsAndSave::class,
         Commands\GetPagesAndSave::class,
         Commands\GetAssets::class,
+        Commands\GetGithubEventsAndSave::class,
     ];
 
     /**

@@ -8,8 +8,9 @@
         <title>@yield('page_title', 'The Lazy CMS')</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,500" rel="stylesheet">
         <link rel="stylesheet" href="{{ mix('assets/css/app.css')}}">
+        <script defer src="{{ mix('assets/js/app.js') }}"></script>
     </head>
-    <body>
+    <body class="@yield('signature')">
         <div id="app">
             <div class="page">
                 <main class="page__main">
@@ -24,32 +25,10 @@
                     </div>
                 </main>
                 <sidebar>
-                    <ul class="navigation__list">
-                        <li class="navigation__item"><a href="{{url('/')}}">Stream</a>
-                            <ul class="navigation__secondary-list">
-                                <li class="navigation__secondary-list-item"><a href="{{url('stream/post')}}">posts</a></li>
-                                <li class="navigation__secondary-list-item"><a href="{{url('stream/tweet')}}">tweets</a></li>
-                                <li class="navigation__secondary-list-item"><a href="#">videos</a></li>
-                                <li class="navigation__secondary-list-item"><a href="#">github</a></li>
-                                <li class="navigation__secondary-list-item"><a href="#">livecoding</a></li>
-                            </ul>
-                        </li>
-                        <li class="navigation__item"><a href="{{url('/about')}}">About</a>
-                            <ul class="navigation__secondary-list">
-                                <li class="navigation__secondary-list-item"><a href="#">styleguide</a></li>
-                                <li class="navigation__secondary-list-item"><a href="#">disclaimer</a></li>
-                            </ul>
-                        </li>
-                        <li class="navigation__item"><a href="{{url('/projects')}}">Projects &amp; Contributions</a>
-                            <ul class="navigation__secondary-list">
-                                <li class="navigation__secondary-list-item"><a href="#">heisenberg</a></li>
-                                <li class="navigation__secondary-list-item"><a href="#">laravel-elixir-compass</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    @include('layouts.components.sidebar')
                 </sidebar>
             </div>
         </div>
     </body>
-        <script src="{{ mix('assets/js/app.js') }}"></script>
+
 </html>

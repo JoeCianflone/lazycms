@@ -1,0 +1,33 @@
+.post {
+    @include span(10);
+    padding: 0 0 rem(50px) 0;
+    font-size: rem(18px);
+
+    &__headline {
+        margin: 0 0 rem(15px) 0;
+
+    }
+
+    p {
+        margin-bottom: rem(20px);
+        line-height: 1.6;
+    }
+
+    h2 {
+        margin: rem(35px) 0 rem(15px) 0;
+    }
+
+    ol {
+
+        padding: 0 0 0 rem(22px);
+
+        li {
+            padding: 0 0 rem(20px) 0;
+        }
+    }
+
+    a {
+        color: get-color(tundora);
+        text-decoration: underline;
+    }
+}
